@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-atlas": "jest ./atlas"
   },
   "private": true,
   "dependencies": {
@@ -12,5 +12,12 @@
     "mongodb": "^6.9.0",
     "prompts": "^2.4.2",
     "rate-limit-threshold": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.19",
+    "@types/mocha": "^10.0.8",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3",
+    "mongo-unit": "^3.3.0"
   }
 }
