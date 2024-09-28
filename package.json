@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run scrape",
+    "scrape": "node --experimental-require-module index.js",
     "test-atlas": "jest ./atlas"
   },
   "private": true,
