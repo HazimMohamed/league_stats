@@ -31,5 +31,7 @@ async function main() {
 
 (async () => {
     await initLogging();
+    logger.info('fuck')
+    require('doesn');
     await main();
 })();
