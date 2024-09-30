@@ -1,8 +1,9 @@
 const {getPlayerId, getPlayerMatches, getMatchInformation} = require("./lib/riot_api/endpoints");
 const {MongoHandle} = require("./lib/mongo");
 const {Match} = require("./lib/riot_api/match");
+const {initLogging} = require('./lib/logging');
 
-(async () => {
+async function main() {
     const dbHandle = new MongoHandle();
     await dbHandle.init();
 
@@ -19,11 +20,16 @@ const {Match} = require("./lib/riot_api/match");
         const isRecorded = await dbHandle.isMatchRecorded(m.id);
         if (!isRecorded) {
             await dbHandle.write(m);
-            console.log(`${c++}: Wrote match ${m.toStringAs(player.puuid)}`);
+            logger.info(`${c++}: Wrote match ${m.toStringAs(player.puuid)}`);
         } else {
-            console.log(`${c++}: Already have match ${m.toStringAs(player.puuid)}`);
+            logger.info(`${c++}: Already have match ${m.toStringAs(player.puuid)}`);
         }
     }
 
     await dbHandle.close();
+}
+
+(async () => {
+    await initLogging();
+    await main();
 })();
