@@ -14,7 +14,6 @@
     "axios": "^1.7.7",
     "envalid": "^8.0.0",
     "mongodb": "^6.9.0",
-    "prompts": "^2.4.2",
     "rate-limit-threshold": "^0.2.0",
     "winston": "^3.14.2"
   },
@@ -22,6 +21,7 @@
     "@types/chai": "^4.3.19",
     "@types/mocha": "^10.0.8",
     "chai": "^5.1.1",
+    "flags": "^0.2.2",
     "mocha": "^10.7.3",
     "mongo-unit": "^3.3.0"
   }
